@@ -1,0 +1,78 @@
+*{
+    background: #F3F5FC;
+}
+header{
+    margin-top: 30px;
+    height: 10%;
+}
+body{
+    height: 60%;
+}
+.canvas{
+    height: 10%;
+    width: 100%;
+    margin-top: 2px;
+    align-content: center;
+}
+#ahorcado{
+    margin-top: 1px;
+    height: 10%;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+}
+.buttons{
+    text-align: center;
+}
+.btn-jugar,.btn-cancelar{
+    text-align: center;
+    width: 8%;
+    height: 2%;
+    padding: 20px 15px;
+    border-radius: 24px;
+    margin-top: 1%;
+    margin-left: 5%;
+    text-decoration: none;
+}
+.btn-jugar{
+    background: darkblue;
+    border-color: darkblue;
+    color: #F3F5FC;
+}
+.btn-cancelar{
+    background: lightblue;
+    border-color: darkblue;
+    color: darkblue;
+}
+.felicidades,.nuevoIntento{
+    display: none;
+}
+footer{
+    text-align: center;
+    margin-top: 2%;
+}
+footer p strong{
+    font-weight: bold;
+}
+.git{
+    width: 50px;
+    border: 1px solid #F3F5FC;
+}
+.lin{
+    width: 50px;
+    border: 1px solid #F3F5FC;
+}
+.img-git{
+    width: auto;
+    height: 40px;
+    border: 1px solid #F3F5FC;
+    margin-top: 4px;
+}
+.img-lin{
+    width: auto;
+    height: 40px;
+    border: 1px solid #F3F5FC;
+    margin-left: 20px;
+    margin-top: 4px;
+}
