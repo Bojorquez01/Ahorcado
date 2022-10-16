@@ -16,19 +16,22 @@
                 <img src="assets/img/Logo.png" alt="Logo Alura">
             </header>
 
-            <input class="text-input" type="text" id="input-new-word" maxlength="14" placeholder="Escribe la palabra." onfocusout="inputFocusOut()" onfocus="inputFocusIn()" >
-            <div class="workspace">
-            <a class="btn-guardar" href="juego.html">Guardar y jugar</a>
-            <a class="btn-cancelar" href="index.html">Cancelar</a>
+            <div class="importante">
+                <input class="text-input" type="text" id="new-word" maxlength="14" placeholder="Escribe la palabra.">
+
+                <div class="botones">
+                <a class="btn-guardar" id="btn-guardar" href="juego.html">Guardar y jugar</a>
+                <a class="btn-cancelar" href="index.html">Cancelar</a>
+                </div>
             </div>
 
-            </section>
-            <footer>
-                <p class="footer">&copy Challenge Alura 2022 - Desarrollado por <strong>Oscar Alejandro Bojórquez Ruíz</strong></p>
-                <a href="https://github.com/Bojorquez01"><img class="img-git" src="assets/img/git.png"></a>
-                <a href="https://linkedin.com/in/OscarAlejandroBojorquezRuiz"><img class="img-lin" src="assets/img/lin.png"></a>
-            </footer>
         </div>
-        <script src="js/agregarPalabra.js"></script>
+        <footer>
+            <p class="footer">&copy Challenge Alura 2022 - Desarrollado por <strong>Oscar Alejandro Bojórquez Ruíz</strong></p>
+            <a href="https://github.com/Bojorquez01"><img class="img-git" src="assets/img/git.png"></a>
+            <a href="https://linkedin.com/in/OscarAlejandroBojorquezRuiz"><img class="img-lin" src="assets/img/lin.png"></a>
+        </footer>
     </body>
+        <script src="js/agregarPalabra.js"></script>
+        <script src="js/juego.js"></script>
 </html>

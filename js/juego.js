@@ -1,4 +1,4 @@
-var palabras = ['CSS','HTML','ALURA','ORACLE','JAVA','CIVICA','SILLA','COHETE','MAR','LUNA','SOL','SQL','PERL']
+var palabras = ['CSS','HTML','ALURA','ORACLE','JAVA','CIVICA','SILLA','COHETE','MAR','LUNA','SOL','SQL','PERL'];
 var tablero = document.getElementById('ahorcado').getContext('2d');
 var letras = []; 
 var palabraCorrecta = "";
@@ -24,10 +24,8 @@ tablero.stroke();
 function escogerPalabraSectreta(){
     var palabra =  palabras[Math.floor(Math.random()*palabras.length)]
     palabraSecreta = palabra;
-    console.log(palabraSecreta);
     return palabraSecreta;
 }
-
 function dibujarLineas(){
     tablero.lineWidth = 6;
     tablero.lineCap = "round";
@@ -45,6 +43,7 @@ function dibujarLineas(){
 }dibujarLineas(escogerPalabraSectreta())
 
 function escribirLetraCorrecta(index){
+    if (vidas < 7){
         tablero.font = 'bold 52px Arial';
         tablero.lineWidth = 6;
         tablero.lineCap = "round";
@@ -53,7 +52,13 @@ function escribirLetraCorrecta(index){
     
         var ancho = 600/palabraSecreta.length;
         tablero.fillText(palabraSecreta[index], 506+(ancho*index),400);
-
+        correcta--
+        if(letras.length === palabraSecreta.length){
+            tablero.fillStyle = "gold";
+            tablero.font = "40px Arial";
+            tablero.fillText("Felicidades,acertaste la palabra!!!",600,300);
+        }
+    }
 }
 
 function escribirLetraIncorrecta(letra, errorsLeft){
@@ -63,7 +68,7 @@ function escribirLetraIncorrecta(letra, errorsLeft){
     tablero.lineJoin = "round";
     tablero.fillStyle = "#FF0000";
 
-    tablero.fillText(letra, 420+(40*(10-errorsLeft)),460, 40);
+    tablero.fillText(letra, 480+(40*(10 + errorsLeft)),100, 40);
 }
 
 function verificarLetra(key){
@@ -123,7 +128,13 @@ function ponerLetraIncorrecta(letter){
                 iniciar();
                 tablero.moveTo(800,190);
                 tablero.lineTo(830,230);
+                tablero.fillStyle = "gold";
+                tablero.font = "40px Arial";
+                tablero.fillText("Haz perdido,vuelve a intentarlo!!!",600,300);
+                tablero.font = "25px Arial";
+                tablero.fillText("Palabra escondida: "+ palabraSecreta,850,200);
                 terminar();
+                
             break;
         }
     }
@@ -133,7 +144,6 @@ document.onkeydown = (e) => {
     let letra = e.key.toUpperCase();
     if(!verificarLetra(e.key)){
         if(palabraSecreta.includes(letra)){
-            console.log(letra);
             ponerLetraCorrecta(palabraSecreta.indexOf(letra))
             for(let i = 0; i < palabraSecreta.length; i++){
                 if(palabraSecreta[i] ===letra){
